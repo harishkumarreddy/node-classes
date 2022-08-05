@@ -1,16 +1,50 @@
 /**
- * Data Types:
- *  Primitive Data Types:
- *    Short 2 bytes -> 99
- *    Long 4 bytes -> 9999
- *    Int 8 bytes -> 999999999
- *    Float 4 bytes -> 9.99
- *    Double 8 bytes -> 9.99999999
- *    Boolean 1 byte -> true / false (true = 1, false = 0)
- *    char 1 byte -> a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z
- *  Non-Primitive Data Types:
- *   String -> "Hello World"
- *   Array  -> [1, "Three", 3, [4], 5]
- *   Object -> {name: "John", age: 30,}
- *   Dateandtime -> system date and time
+ * Data Types in JavaScript:
+ * 1. Primitive Data Types
+ *   a. Number
+ *   b. String
+ *   c. Boolean
+ *   d. Undefined -> value not assigned
+ *   e. Null -> value assigned
+ * 
+ * 2. Non-Primitive Data Types
+ *  a. Object
+ *  b. Array
+ * 
  */
+
+var age = 25; // Number
+var height = 5.5; // Number
+var weight = 65.5; // Number
+var phno = 1234567890; // Number
+
+var userName = "Johnson"; // String
+var address = "123, Main Street, New York"; // String
+var email = "john@gmail.com"; // String
+var phno2 = "+91-1234567890"; // String
+
+var isMarried = true; // Boolean
+var isEmployed = false; // Boolean
+
+var isNull = null; // Null
+var isUndefined = undefined; // Undefined
+
+// Concatenation
+console.log("Age: " + age);
+console.log(height + weight);
+
+// type casting
+console.log(height.toString() + weight.toString());
+console.log(typeof(height));
+console.log(typeof(height.toString()));
+
+// string functions
+console.log("userName: " + userName);
+console.log("length: " + userName.length);
+console.log("to Uppercase: " + userName.toUpperCase());
+console.log("toLowerCase: " + userName.toLowerCase());
+console.log("charAt: " + userName.charAt(0));
+console.log("indexOf: " + userName.indexOf("o"));
+console.log("substring: " + userName.substring(0, 2));
+console.log("split: " + userName.split(""));
+console.log("split: " + userName.split("o"));
