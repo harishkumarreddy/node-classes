@@ -108,3 +108,8 @@ console.log("true || false: " + (a===b || a===c));
 console.log("!False: " + (a!==c));
 console.log("!True: " + (a!==b));
 
+var input = 65;
+var salt = 96;
+var output = input | salt;
+console.log("input: " + input);
+console.log("output: " + output);

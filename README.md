@@ -2,8 +2,8 @@
 
 ## Dipendencies
  1. Node.js LTS
-    . UVlib
-    . jsLib
+    - UVlib
+    - jsLib
  2. NPM / yarn
  3. git
  4. codeeditor / IDE
@@ -13,9 +13,9 @@
 ## How JS can work?
 ## Frameworks for JS
 ### Serverside JS
-. webserver 
-. data server
-. file server
+- webserver 
+- data server
+- file server
 framework: 
 1. express
 2. hapi
@@ -62,6 +62,33 @@ hybrid-frontend:
 - array
 - dateandtime
 ## Operators
-## Decision Making
+- Arithmetic
+- Assignment
+- Comparison
+- Logical
+- Bitwise
+## Decision Making / Conditional Statements
+- if
+- if...else
+- if...else if...else
+- nested if
+- switch
 ## Loops
+- for
+- for...in
+- for...of
+- while
+- do...while
+- break
+- continue
 ## Functions
+- function
+- arrow function
+- callback
+- higher order function
+-- map
+-- filter
+-- reduce
+-- forEach
+- recursion
+
