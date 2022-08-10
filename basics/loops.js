@@ -11,16 +11,18 @@
 
 // print a math table
 var num = 25;
-var times = 15;
+var times = 20;
 var start = 15;
 // // syntax: for(initialization; condition; increment/decrement)
 // // for(var i=0; i<=10; i++){
 // // for(var i=0; i<=times; i++){
+var abc = "";
 // for(var i=start; i<=times; i++){
 //     // 5 * 1 = 5
-//     console.log(num + " x " + i + " = " + (num * i));
+//      console.log(num + " x " + i + " = " + (num * i));
+//     abc += 3;
 // }
-
+// console.log(abc);
 
 // reverse a string
 // var msg = "Hello World";
@@ -51,16 +53,30 @@ var start = 15;
 //     }
 // }
 
-var flag = true;
-setTimeout(()=>{
-    flag = false;
-    console.log("Flag: " + flag);
-}, 10);
+// var flag = true;
+// setTimeout(()=>{
+//     flag = false;
+//     console.log("Flag: " + flag);
+// }, 10);
 
 // while (flag === true){
 //     console.log("Time: " + new Date());
 // }
 
-do{
-    console.log("Hello World");
-}while(flag === true);
+// do{
+//     console.log("Hello World");
+// }while(flag === true);
+
+
+for(var i = 0; i<=10; i++){
+    if(i === 0){
+        continue;
+    }
+    if(i === 5){
+        break;
+        // continue
+    }
+    console.log("i: " + i);
+}
+
+console.log("End of the program");

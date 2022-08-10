@@ -84,11 +84,21 @@ hybrid-frontend:
 ## Functions
 - function
 - arrow function
+- closer
 - callback
+- recursion
 - higher order function
 -- map
 -- filter
 -- reduce
 -- forEach
-- recursion
+
+### Sync and Async
+### ES6 ... js History...
+### Objectified functions
+### OOJS
+### EH -- Error/Exception Handling
+
+# NodeJS EcoSystem
+
 
