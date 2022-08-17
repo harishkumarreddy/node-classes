@@ -101,4 +101,82 @@ hybrid-frontend:
 
 # NodeJS EcoSystem
 ## Initiliaze a project / First NodeJS app
+### Project structure
+```
+Root directory
+  - node_modules
+  - package.json
+  - package-lock.json
+  - index.js
+
+  - configs - config files
+      - app level config
+      - env level config
+  - controllers - Routing controllers
+  - models - Database models
+  - routes - Routing files for endpoints
+  - services - Business logic
+  - utils - Utility functions
+  - views - View files
+  - public - Public files
+  - bin - Executable / Bootstrap files (optional)
+  - helpers - Helper functions 
+  - middlewares - Middleware functions
+  - tests - UnitTest files
+  - Logs - Log files
+```
+
+SDLC:
+- Req gathering
+- Req analysis
+- Req design
+- init development
+   - Architecture
+      - Functional Architecture
+      - System Architecture
+      - Technical Architecture
+      - Physical Architecture
+   - Coding - initial Setup
+- Development
+- Testing
+
+AGILE::
+TDD - Test Driven Development
+
+
+### imports & exports
+
+# Architecture
+1. One tier
+2. Two tier
+3. Three tier
+4. N tier / Layered Architecture
+
+Architecture Patterns:
+1. MVC - Model View Controller
+2. MVVM - Model View View Model
+3. HMVC - Hierarchical Model View Controller(Modular MVC)
+4. Microservices - Microservices Architecture (each module is a indipendent microservice)
+
+## layers
+1. Presentation
+2. Business
+3. Persistence
+4. Data
+5. Security
+
+# Endpoints / Routing
+## HTTP(S) Methods
+### CRUD - Create, Read,  Update, Delete
+- GET
+- POST
+- PUT
+- DELETE 
+
+- PATCH
+- OPTIONS
+
+## Typs of API
+- REST - Representational State Transfer - JSON / XML
+- SOAP - Simple Object Access Protocol - XML: WSDL, UDDI, XSD
 
