@@ -1,23 +1,42 @@
+const user = require("../models/user.model");
 
 class AuthController {
-    regisration(req, res) {
-        console.log(req.body)
+    async regisration(req, res) {
+        let result = await user.create({
+            user_id: req.body.id,
+            full_name: req.body.name,
+            email: req.body.email,
+            password: req.body.pasword
+        });
         res.send({
-            message: "Register route from AuthController",
-            data: req.body
+            message: "User registered successfully",
+            data: result
         });
     }
 
-    login(req, res) {
+    async login(req, res) {
+        
+        let result = await user.findOne({
+            where:{
+                email: req.body.email,
+                password: req.body.pasword
+            }
+        });
         res.send({
-            message: "Login route"
+            message: "Login route",
+            user: result
         });
     }
 
     logout(req, res) {
         res.send({
-            message: "Logout route"
+            message: "Logout route",
+            status: 200,
         });
+    }
+
+    getmyAge (req,res){
+        
     }
 }
 

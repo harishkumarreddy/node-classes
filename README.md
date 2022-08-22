@@ -180,3 +180,22 @@ Architecture Patterns:
 - REST - Representational State Transfer - JSON / XML
 - SOAP - Simple Object Access Protocol - XML: WSDL, UDDI, XSD
 
+# DB:
+1. RDBMS - SQL
+   - MySQL
+   - MSSQL
+   - Oracle
+   - postgres
+
+2. DocumnetDB / NoSQL DB
+   - MongoDB
+   - Cocruch
+   - Riddis
+
+CRUD 
+Create
+Reade
+Update 
+Delete
+## ORM - Object relational mappiong
+

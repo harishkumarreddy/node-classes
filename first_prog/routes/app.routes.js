@@ -1,8 +1,9 @@
 // Express Routing
+const express = require('express');
 const router = require('express').Router();
 const APPCONFIG = require('../configs/app.config.js');
-const staticRouts = require('./static.routs.js');
-const v1Routs = require('./v1/v1.routes.js');
+const authController = require('../controllers/auth.controller.js');
+const path = require('path');
 
 // Home route / base route
 router.get('/', (req, res) => {
@@ -16,10 +17,12 @@ router.get('/', (req, res) => {
 });
 
 // Static routs
-router.use(staticRouts);
+router.use('/images', express.static(path.join(path.dirname(__dirname),"images")));
 
 // API routs
-router.use("/api", v1Routs);
+router.use("/api/v1/register", authController.regisration);
+router.use("/api/v1/login", authController.login);
+router.use("/api/v1/logout", authController.logout);
 
 //export this router to use in bootstrap file as middleware.
 module.exports = router;
