@@ -12,7 +12,7 @@ const app = express();
 ConnectDB();
 
 // Middlewares
-app.use(express.json(), express.urlencoded({extended:true}))
+app.use(express.json(), express.urlencoded({extended:true}));
 
 //Routes
 app.use(router);

@@ -11,6 +11,7 @@ const ReqFormater = (body, options)=>{
         message: options.message,
         status_code:options.status_code,
         status:options.status,
+        count:(Array.isArray(body))? body.length : 1,
         body:(Array.isArray(body))? body : [body]
     }
 }
