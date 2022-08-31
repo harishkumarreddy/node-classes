@@ -15,14 +15,20 @@ class StudentController {
     }
 
     async getById(req, res, next) {
-        let stuData = await student.findById(req.params.id);
-        res.status(200).send(ReqFormater(
-            stuData,
-            {
-                status_code: 200,
-                message: "Success"
-            }
-        ));
+        try{
+            let stuData = await student.findById(req.params.id);
+            res.status(200).send(ReqFormater(
+                stuData,
+                {
+                    status_code: 200,
+                    message: "Success"
+                }
+            ));
+        }catch(err){
+            err.status = 400;
+            next(err);
+        }
+        
     }
 
     create(req, res, next) {
@@ -47,14 +53,8 @@ class StudentController {
                     ));
                 })
                 .catch(err =>{
-                    console.log(err);
-                    res.status(400).send(ReqFormater(
-                        [],
-                        {
-                            status_code: 400,
-                            message: "Failed to create record"
-                        }
-                    ));
+                    err.status = 400;
+                    next(err);
                 });
     }
 
@@ -85,14 +85,8 @@ class StudentController {
                     ));
                 })
                 .catch(err => {
-                    console.log(err);
-                    res.status(400).send(ReqFormater(
-                        [],
-                        {
-                            status_code: 400,
-                            message: "Failed to update record"
-                        }
-                    )); 
+                    err.status = 400;
+                    next(err);
                 });
     }
 

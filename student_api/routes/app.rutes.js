@@ -10,5 +10,24 @@ router.get("/", (req, res, next)=>{
 });
 
 // Student Routes
-router.use("/students", StuRouter)
+router.use("/students", StuRouter);
+
+// whild-card rout
+router.all("*", (req, res, next) =>{
+    const error = new Error("Rout nout found");
+    error.status = 404;
+    next(error);
+});
+
+// Exception middleware
+router.use((err, req, res, next) =>{
+    const errStatus = err.status || 500;
+    console.error(err);
+    res.status(errStatus).json(
+        ResFormator([], {
+                status_code: errStatus,
+                message: err.message || "Currently we are having internal system erroer and we are investigating this."
+            }));
+    res.end();
+});
 module.exports = router;
