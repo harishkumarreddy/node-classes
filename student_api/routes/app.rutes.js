@@ -21,6 +21,7 @@ router.all("*", (req, res, next) =>{
 
 // Exception middleware
 router.use((err, req, res, next) =>{
+    // if(err.isJo)
     const errStatus = err.status || 500;
     console.error(err);
     res.status(errStatus).json(
