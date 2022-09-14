@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const ResFormator = require('../helpers/responseForemater.helper');
 const StuRouter = require('./student.rutes');
+const log = require('../helpers/loger.helper')
 
 router.get("/", (req, res, next)=>{
     res.status(200).json(ResFormator({
@@ -24,6 +25,7 @@ router.use((err, req, res, next) =>{
     // if(err.isJo)
     const errStatus = err.status || 500;
     console.error(err);
+    log.debug(err)
     res.status(errStatus).json(
         ResFormator([], {
                 status_code: errStatus,

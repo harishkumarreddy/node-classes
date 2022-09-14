@@ -26,3 +26,15 @@ router.use("/api/v1/logout", authController.logout);
 
 //export this router to use in bootstrap file as middleware.
 module.exports = router;
+
+/*
+{
+    "full_name": "Harish",
+    "contact": "+91-7801070710",
+    "email": "mail2@email.com",
+    "address": "Kondapur, Hyderabad , Telangana 500084",
+    "stream": "MCA",
+    "dob": "1987-09-02",
+    "specilization": "IIoT"
+}
+*/

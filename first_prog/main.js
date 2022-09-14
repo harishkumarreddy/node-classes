@@ -11,7 +11,6 @@ const connectDB = require('./lib/mongo.lib.js');
 const app = express();
 
 app.use(express.json(), express.urlencoded({ extended: true }));
-app.use(routs);
 
 mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology: true }).then((result) => {
     app.listen(3000, () => {
