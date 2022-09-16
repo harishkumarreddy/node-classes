@@ -6,6 +6,8 @@ const ConnectDB = require('./helpers/dbconnetor.helper');
 const router = require('./routes/app.rutes');
 const resFormat = require('./helpers/responseForemater.helper');
 const log = require('./helpers/loger.helper');
+const cors = require('./middilwares/cors.middilware');
+const authMiddilware = require('./middilwares/auth.middilware');
 
 // Constents
 const app = express();
@@ -17,6 +19,8 @@ ConnectDB();
 
 // Middlewares
 app.use(express.json(), express.urlencoded({extended:true}));
+// app.use(cors);
+// app.use(authMiddilware);
 
 // app.use((req, res, next)=>{
 //     if (req.headers.authorization === undefined || req.headers.authorization === "" || req.headers.authorization.indexOf("Bearer ") !== 0) {

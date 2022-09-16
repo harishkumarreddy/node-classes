@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const ResFormator = require('../helpers/responseForemater.helper');
 const StuRouter = require('./student.rutes');
-const log = require('../helpers/loger.helper')
+const log = require('../helpers/loger.helper');
+const authRouter = require('./auth.rutes ');
 
 router.get("/", (req, res, next)=>{
     res.status(200).json(ResFormator({
@@ -10,6 +11,7 @@ router.get("/", (req, res, next)=>{
     }));
 });
 
+router.use("/auth", authRouter);
 // Student Routes
 router.use("/students", StuRouter);
 
