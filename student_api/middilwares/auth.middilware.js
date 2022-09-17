@@ -9,13 +9,31 @@ const authMiddilware = (req, res, next)=> {
     }else{
         if(whitelistedURLs.indexOf(req.url) == -1){
             let authKey = req.headers.authorization;
-            if(authKey.indexOf('Bearer') == 0){
-                authKey = authKey.replace("Bearer ", "");
-                console.log(authKey);
-                jwtHelper.validate(authKey).then((payload) => {
-                    console.log(payload);
-                    next();
-                }).catch((err) =>{
+            if(typeof authKey === 'undefined'){
+                res.status(406).send(
+                    responseForemater([], {
+                        message: "Unauthorised Request format",
+                        status_code: 406,
+                        status: "Unauthorised"
+                    })
+                ).end()
+            }else{
+                if(authKey.indexOf('Bearer') == 0){
+                    authKey = authKey.replace("Bearer ", "");
+                    console.log(authKey);
+                    jwtHelper.validate(authKey).then((payload) => {
+                        console.log(payload);
+                        next();
+                    }).catch((err) =>{
+                        res.status(406).send(
+                            responseForemater([], {
+                                message: "Invalid token",
+                                status_code: 406,
+                                status: "Unauthorised"
+                            })
+                        ).end()
+                    })
+                }else{
                     res.status(406).send(
                         responseForemater([], {
                             message: "Invalid token",
@@ -23,16 +41,9 @@ const authMiddilware = (req, res, next)=> {
                             status: "Unauthorised"
                         })
                     ).end()
-                })
-            }else{
-                res.status(406).send(
-                    responseForemater([], {
-                        message: "Invalid token",
-                        status_code: 406,
-                        status: "Unauthorised"
-                    })
-                ).end()
+                }
             }
+            
         }else{
             next();
         }

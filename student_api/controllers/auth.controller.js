@@ -1,13 +1,26 @@
 const ReqFormater = require('../helpers/responseForemater.helper')
 const student = require('../models/studet.model');
 const studentValidation = require('../validations/student.validation');
+const { sign } = require('../helpers/jwt.helper');
 
 class AuthController {
     async login(req, res, next) {
         try {
             let stuData = await student.findOne(req.body);
+            let token = await sign({
+                full_name: stuData.full_name,
+                contact: stuData.contact,
+                email: stuData.email,
+                address: stuData.address,
+                stream: stuData.stream,
+                dob: stuData.dob,
+                specilization: stuData.specilization,
+                id: stuData._id.toString()
+            });
             res.status(200).send(ReqFormater(
-                stuData,
+                {
+                    token: token
+                },
                 {
                     status_code: 200,
                     message: "Success"

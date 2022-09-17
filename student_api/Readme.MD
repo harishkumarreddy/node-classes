@@ -42,7 +42,11 @@
         - auth-key
         - JWT
 
-2. Authoraisation
+2. Authoraisation:
+    1. CORS --> Cross Origen Requesting Service -> whitelisted IPs, Websites...
+    2. User Authentisation
+        1. Public Routes
+        2. Private Routes
 3. e2e enc --> Public & private keys
     1. app level -> base64/base64-with-solt & md5
     2. Protocall level --> SSL

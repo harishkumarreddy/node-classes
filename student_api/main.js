@@ -19,8 +19,8 @@ ConnectDB();
 
 // Middlewares
 app.use(express.json(), express.urlencoded({extended:true}));
-// app.use(cors);
-// app.use(authMiddilware);
+app.use(cors);
+app.use(authMiddilware);
 
 // app.use((req, res, next)=>{
 //     if (req.headers.authorization === undefined || req.headers.authorization === "" || req.headers.authorization.indexOf("Bearer ") !== 0) {
